@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        div {
+            background-color: aqua;
+            height: 200px;
+            width: 300px;
+            border: 5px solid black;
+            position: relative;
+            top: 40%;
+            left: 35%;
+            text-align: center;
+            padding: 25px;
+            box-sizing: border-box;
+            background-image: url(download.png);
+            background-size: cover;
+        }
+
+        input {
+            display: block;
+            width: 240px;
+            margin-bottom: 20px;
+        }
+
+        .bgc {
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body class="bgc">
+
+    <h1>Age Calculator</h1>
+    <hr>
+    <div>
+        <h3>Enter your Date of birth</h3>
+        <input type="date">
+        <button onclick="check()">check age</button>
+
+
+
+    </div>
+
+    ​
+    <script>
+
+        function check() {
+            var presentYear = new Date().getFullYear();
+
+            var dob = document.querySelector("input").value;
+
+            dob = new Date(dob);
+
+            var dobYear = dob.getFullYear();
+
+            var age = presentYear - dobYear;
+
+            var result = document.createElement("h1");
+
+            result.textContent = age;
+
+            document.body.append(result);
+
+        }
+    </script>
+    ​
+</body>
+
+</html>
